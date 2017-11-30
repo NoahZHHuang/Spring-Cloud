@@ -10,14 +10,13 @@ import com.noah.service.HiService;
 @RestController
 @RequestMapping("/hi")
 public class HiController {
-	
+
 	@Autowired
 	private HiService hiService;
-	
+
 	@RequestMapping("/{somebody}")
-	public String sayHi(@PathVariable(name = "somebody") String somebody){
-		
-		return hiService.sayHi(somebody);
+	public String sayHi(@PathVariable(name = "somebody") String somebody) {
+		return "[Ribbon] " + hiService.sayHi(somebody);
 	}
-	
+
 }
